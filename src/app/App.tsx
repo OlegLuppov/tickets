@@ -1,6 +1,12 @@
 import './app.scss'
+import Tickets from '../components/tickets/tickets'
+
 function App() {
-	return <div className='container'>test render</div>
+	return (
+		<section className='tickets'>
+			<Tickets />
+		</section>
+	)
 }
 
 export default App

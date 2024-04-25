@@ -1,0 +1,52 @@
+.tickets__item {
+	width: 540px;
+	@include flex(start, start);
+	background-color: #fff;
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 0px 4px 1px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 0px 0px 4px 1px rgba(34, 60, 80, 0.2);
+	box-shadow: 0px 0px 4px 1px rgba(34, 60, 80, 0.2);
+	.tickets__bye {
+		@include flex(center, center);
+		flex-direction: column;
+		gap: 20px;
+		padding: 20px;
+		border-right: 1px solid $grey1;
+		.tickets__logo {
+			width: 115px;
+			height: 33px;
+			background-image: url('../../../public/assets/img/png/logo-airlines.png');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: contain;
+		}
+		.tickets__buttons-bye {
+			width: 150px;
+			color: #fff4cf;
+			background-color: #ff6d00;
+			text-transform: none;
+			white-space: pre-wrap;
+		}
+	}
+	.tickets__descr-wrp {
+		padding: 20px;
+		.tickets__descr {
+			.tickets__time {
+				@include font(Roboto, 400, 24px, start);
+				color: $grey2;
+			}
+			.tickets__address-wrp {
+				.tickets__address {
+					display: block;
+					@include font(Roboto, 400, 14px, start);
+					color: $grey2;
+				}
+				.tickets__date {
+					display: block;
+					@include font(Roboto, 400, 14px, start);
+					color: $grey1;
+				}
+			}
+		}
+	}
+}

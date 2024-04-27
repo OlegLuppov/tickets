@@ -1,10 +1,10 @@
 .tickets__list {
-	flex-basis: 50%;
+	flex: 1;
 	min-width: 555px;
-	@include flex(center, start);
+	@include flex(start, start);
 	flex-direction: column;
 	gap: 20px;
-	height: 100%;
+	height: calc(100vh - 80px);
 	overflow-y: auto;
 	scrollbar-width: thin;
 }

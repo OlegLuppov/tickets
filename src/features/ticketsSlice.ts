@@ -2,11 +2,12 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { URLS_TICKETS } from '../shared/ustils/api/urls'
 import { getApiResourse } from '../shared/ustils/api/networks'
-import { TInitialStateTickets, TGetApiResourse, TTicketData } from '../interfaces'
+import { TInitialStateTickets, TGetApiResourse, TTicketData, TFilterStops } from '../interfaces'
 
 const initialState: TInitialStateTickets = {
 	data: undefined,
 	isLoading: false,
+	filters: {},
 }
 
 export const getTicketsFetch = createAsyncThunk('getTickets', async () => {
@@ -20,7 +21,27 @@ export const companiesSlice = createSlice({
 	name: 'tickets',
 	initialState,
 
-	reducers: {},
+	reducers: {
+		setFilterQuantityStops(state, action: PayloadAction<TFilterStops[]>) {
+			if (!action.payload || !action.payload.length) return
+			state.filters.quantityStops = action.payload
+		},
+
+		changeFilterQuantityStops(state, action: PayloadAction<string>) {
+			if (
+				!state.filters.quantityStops ||
+				!state.filters.quantityStops.length ||
+				(action.payload && action.payload === '')
+			)
+				return
+
+			const findCheckboxFilter = state.filters.quantityStops.find(
+				(checkbox) => checkbox.id === action.payload
+			)
+
+			if (!findCheckboxFilter) return
+		},
+	},
 
 	extraReducers: (builder) => {
 		// get tickets
@@ -42,6 +63,6 @@ export const companiesSlice = createSlice({
 	},
 })
 
-export const {} = companiesSlice.actions
+export const { setFilterQuantityStops } = companiesSlice.actions
 
 export default companiesSlice.reducer

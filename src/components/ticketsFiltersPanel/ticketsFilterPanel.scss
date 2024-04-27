@@ -1,0 +1,37 @@
+.tickets__filter-panel {
+	@include flex(start, start);
+	flex-direction: column;
+	gap: 33px;
+	background-color: #fff;
+	padding: 17px 0 20px 0;
+	border-radius: 4px;
+	-webkit-box-shadow: 0px 0px 4px 1px rgba(34, 60, 80, 0.2);
+	-moz-box-shadow: 0px 0px 4px 1px rgba(34, 60, 80, 0.2);
+	box-shadow: 0px 0px 4px 1px rgba(34, 60, 80, 0.2);
+	.tickets__filter-title {
+		@include font(Roboto, 500, 12px, start);
+		&--quantity-stops {
+			padding: 0 10px;
+		}
+	}
+	.tickets__filter {
+		@include flex(start, start);
+		flex-direction: column;
+		gap: 16px;
+		padding: 0 10px;
+		&--quantity-stops {
+			padding: 0;
+			width: 100%;
+			.tickets__filter-cbx-list {
+				width: 100%;
+				.tickets__filter-cbx-item {
+					width: 100%;
+					padding: 0 10px;
+					&:hover {
+						background-color: #f1fcff;
+					}
+				}
+			}
+		}
+	}
+}

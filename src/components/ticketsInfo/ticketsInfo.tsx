@@ -1,6 +1,5 @@
-import './ticketsInfo.scss'
 import { TPropsForTicketsInfo } from '../../interfaces'
-import converDate from '../../shared/ustils/date/converDate'
+import convertDate from '../../shared/ustils/date/convertDate'
 
 function TicketsInfo(props: TPropsForTicketsInfo) {
 	const { departureTime, originName, departureDate, origin } = props
@@ -14,7 +13,7 @@ function TicketsInfo(props: TPropsForTicketsInfo) {
 
 			<div className='tickets__address-wrp'>
 				<span className='tickets__content tickets__content--address'>{`${origin ? origin + ',' : ''} ${originName ? originName : ''}`}</span>
-				<span className='tickets__content tickets__content--date'>{`${departureDate ? converDate(departureDate) : ''}`}</span>
+				<span className='tickets__content tickets__content--date'>{`${departureDate ? convertDate(departureDate) : ''}`}</span>
 			</div>
 		</div>
 	)

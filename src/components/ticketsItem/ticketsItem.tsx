@@ -1,13 +1,11 @@
 import { Button } from '@mui/material'
 import { TPropsForTicketsItem } from '../../interfaces'
 import './ticketsItem.scss'
-import converDate from '../../shared/ustils/date/converDate'
 import getTransfersName from '../../shared/ustils/transferNames/transferNames'
 import TicketsInfo from '../ticketsInfo/ticketsInfo'
 
 function TicketsItem(props: TPropsForTicketsItem) {
 	const {
-		id,
 		origin,
 		origin_name,
 		destination,
@@ -16,7 +14,6 @@ function TicketsItem(props: TPropsForTicketsItem) {
 		departure_time,
 		arrival_date,
 		arrival_time,
-		carrier,
 		stops,
 		price,
 	} = props.ticket
@@ -44,7 +41,7 @@ function TicketsItem(props: TPropsForTicketsItem) {
 				/>
 				<div className='tickets__descr tickets__descr--transfer'>
 					<span className='tickets__content tickets__content--transfers'>
-						{getTransfersName(stops)}
+						{getTransfersName(stops)?.toUpperCase()}
 					</span>
 					<div className='tickets__line-wrp'>
 						<span className='tickets__content tickets__content--line'></span>

@@ -45,6 +45,7 @@
 			&--address {
 				color: $grey2;
 				font-size: 12px;
+				font-weight: 500;
 			}
 			&--time {
 				@include font(Roboto, 400, 24px, start);

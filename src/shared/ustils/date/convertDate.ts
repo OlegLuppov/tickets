@@ -2,7 +2,7 @@ import moment from 'moment'
 import 'moment/dist/locale/ru'
 
 // Convert date 10.10.2018 to 10 окт 2018, пт
-function converDate(date: string) {
+function convertDate(date: string) {
 	if (!date) return
 	let dateFormat: any = []
 	const dateToArr = date.split('.')
@@ -15,4 +15,4 @@ function converDate(date: string) {
 	return dateFormat
 }
 
-export default converDate
+export default convertDate

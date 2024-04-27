@@ -3,6 +3,18 @@ export type TInitialStateTickets = {
 	itemsLength?: number
 	isLoading: boolean
 	error?: string
+	filters: TTicketsFilters
+}
+
+export type TTicketsFilters = {
+	quantityStops?: TFilterStops[]
+}
+
+export type TFilterStops = {
+	id: string
+	stops?: number
+	checked: boolean
+	isAll: boolean
 }
 
 export type TTicketData = {

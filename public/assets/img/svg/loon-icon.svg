@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="400" height="400" viewBox="0 0 400 400" xml:space="preserve">
+<desc>Created with Fabric.js 3.6.2</desc>
+<defs>
+</defs>
+<g transform="matrix(13.37 0 0 13.37 200 200)" id="Rectangle 251"  >
+<path style="stroke: none; stroke-width: 1; stroke-dasharray: none; stroke-linecap: butt; stroke-dashoffset: 0; stroke-linejoin: miter; stroke-miterlimit: 4; fill: rgb(183,184,185); fill-rule: evenodd; opacity: 1;"  transform=" translate(-631.48, -200.51)" d="M 624 202 L 624 201 L 624 200 L 624 199 L 624 195.974609 L 626.254731 199 L 629.71047 199 L 627.978027 193.016357 L 628.918701 193.016357 L 634.129208 199 L 637.10024 199 C 638.013133 199 638.774279 199.642602 638.957827 200.499733 C 638.774163 201.356511 638.012252 202 637.10024 202 L 634.142857 202 L 629 208 L 628 208 L 629.714286 202 L 626.25 202 L 624 205 Z M 624 202" stroke-linecap="round" />
+</g>
+</svg>

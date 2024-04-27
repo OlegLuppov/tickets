@@ -1,12 +1,11 @@
 import { Button } from '@mui/material'
-import { TTicketData } from '../../interfaces'
+import { TPropsForTicketsItem } from '../../interfaces'
 import './ticketsItem.scss'
-import moment from 'moment'
 import converDate from '../../shared/ustils/date/converDate'
-type TProps = {
-	ticket: TTicketData
-}
-function TicketsItem(props: TProps) {
+import getTransfersName from '../../shared/ustils/transferNames/transferNames'
+import TicketsInfo from '../ticketsInfo/ticketsInfo'
+
+function TicketsItem(props: TPropsForTicketsItem) {
 	const {
 		id,
 		origin,
@@ -37,18 +36,27 @@ function TicketsItem(props: TProps) {
 				)}
 			</div>
 			<div className='tickets__descr-wrp'>
-				<div className='tickets__descr'>
-					{departure_time && (
-						<div className='tickets__time'>
-							<span>{departure_time}</span>
-						</div>
-					)}
-
-					<div className='tickets__address-wrp'>
-						<span className='tickets__address'>{`${origin ? origin + ',' : ''} ${origin_name ? origin_name : ''}`}</span>
-						<span className='tickets__date'>{`${departure_date ? converDate(departure_date) : ''}`}</span>
+				<TicketsInfo
+					departureTime={departure_time}
+					departureDate={departure_date}
+					originName={origin_name}
+					origin={origin}
+				/>
+				<div className='tickets__descr tickets__descr--transfer'>
+					<span className='tickets__content tickets__content--transfers'>
+						{getTransfersName(stops)}
+					</span>
+					<div className='tickets__line-wrp'>
+						<span className='tickets__content tickets__content--line'></span>
+						<i className='tickets__i-airplane'></i>
 					</div>
 				</div>
+				<TicketsInfo
+					departureTime={arrival_time}
+					departureDate={arrival_date}
+					originName={destination_name}
+					origin={destination}
+				/>
 			</div>
 		</li>
 	)

@@ -1,8 +1,9 @@
 .tickets__list {
+	flex-basis: 50%;
+	min-width: 555px;
 	@include flex(center, start);
 	flex-direction: column;
 	gap: 20px;
-	flex-basis: 50%;
 	height: 100%;
 	overflow-y: auto;
 	scrollbar-width: thin;

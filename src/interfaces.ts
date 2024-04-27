@@ -26,3 +26,14 @@ export type TGetApiResourse<Data> = {
 	err?: Error
 	result?: Data
 }
+
+export type TPropsForTicketsItem = {
+	ticket: TTicketData
+}
+
+export type TPropsForTicketsInfo = {
+	departureTime?: string
+	originName?: string
+	departureDate?: string
+	origin?: string
+}

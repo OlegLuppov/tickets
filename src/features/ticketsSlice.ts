@@ -2,7 +2,13 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { URLS_TICKETS } from '../shared/ustils/api/urls'
 import { getApiResourse } from '../shared/ustils/api/networks'
-import { TInitialStateTickets, TGetApiResourse, TTicketData, TFilterStops } from '../interfaces'
+import {
+	TInitialStateTickets,
+	TGetApiResourse,
+	TTicketData,
+	TFilterStops,
+	TCheckboxOptions,
+} from '../interfaces'
 
 const initialState: TInitialStateTickets = {
 	data: undefined,
@@ -27,19 +33,58 @@ export const companiesSlice = createSlice({
 			state.filters.quantityStops = action.payload
 		},
 
-		changeFilterQuantityStops(state, action: PayloadAction<string>) {
+		changeFilterQuantityStops(state, action: PayloadAction<TCheckboxOptions>) {
 			if (
 				!state.filters.quantityStops ||
 				!state.filters.quantityStops.length ||
-				(action.payload && action.payload === '')
+				(!action.payload.id && action.payload.id === '')
 			)
 				return
+			// Если клик по кнопке ТОЛЬКО
+			if (action.payload.checked === undefined || action.payload.checked === null) {
+				state.filters.quantityStops.forEach((filter) => {
+					if (filter.id === action.payload.id) {
+						filter.checked = true
+					} else {
+						filter.checked = false
+					}
+				})
 
-			const findCheckboxFilter = state.filters.quantityStops.find(
-				(checkbox) => checkbox.id === action.payload
+				return
+			}
+
+			const findFilter = state.filters.quantityStops.find(
+				(filter) => filter.id === action.payload.id
 			)
 
-			if (!findCheckboxFilter) return
+			if (!findFilter) return
+
+			// Если клик по checkbox ALL
+			if (action.payload.checked === undefined || action.payload.checked === null) return
+
+			if (findFilter.isAll) {
+				state.filters.quantityStops.forEach((filter) => (filter.checked = action.payload.checked!))
+				return
+			}
+
+			// Если клик НЕ по checkbox ALL
+			findFilter.checked = action.payload.checked
+			const findFilterIsAll = state.filters.quantityStops.find((filter) => filter.isAll)
+			if (!findFilterIsAll) return
+
+			let counterCheckboxes = 0
+			state.filters.quantityStops.forEach((filter) => {
+				if (filter.isAll) return
+				if (filter.checked) {
+					counterCheckboxes++
+				}
+			})
+
+			if (counterCheckboxes === state.filters.quantityStops.length - 1) {
+				findFilterIsAll.checked = true
+			} else {
+				findFilterIsAll.checked = false
+			}
 		},
 	},
 
@@ -57,12 +102,12 @@ export const companiesSlice = createSlice({
 					return
 				}
 				if (!action.payload.result || !action.payload.result.length) return
-				state.data = action.payload.result.sort((a, b) => a.price - b.price)
+				state.data = action.payload.result
 			}
 		)
 	},
 })
 
-export const { setFilterQuantityStops } = companiesSlice.actions
+export const { setFilterQuantityStops, changeFilterQuantityStops } = companiesSlice.actions
 
 export default companiesSlice.reducer

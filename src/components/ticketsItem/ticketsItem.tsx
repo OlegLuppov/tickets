@@ -23,11 +23,7 @@ function TicketsItem(props: TPropsForTicketsItem) {
 			<div className='tickets__bye'>
 				<i className='tickets__logo'></i>
 				{price && (
-					<Button
-						onClick={() => console.log(`Цена билета: ${price.toLocaleString()}₽`)}
-						className='tickets__buttons-bye'
-						variant='contained'
-					>
+					<Button className='tickets__buttons-bye' variant='contained'>
 						{`Купить\nза ${price.toLocaleString()}₽`}
 					</Button>
 				)}

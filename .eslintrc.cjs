@@ -26,13 +26,6 @@ module.exports = {
 		'function-paren-newline': 'off',
 		'arrow-body-style': 'off',
 		'@typescript-eslint/no-unused-vars': 'warn',
-		'react/function-component-definition': [
-			2,
-			{
-				namedComponents: 'arrow-function',
-				unnamedComponents: 'arrow-function',
-			},
-		],
 		'react/destructuring-assignment': [0],
 		'react/prop-types': [0],
 		'react-hooks/rules-of-hooks': 'error',

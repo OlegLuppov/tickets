@@ -19,16 +19,31 @@
 		flex-direction: column;
 		gap: 16px;
 		padding: 0 10px;
+
 		&--quantity-stops {
 			padding: 0;
 			width: 100%;
 			.tickets__filter-cbx-list {
+				@include flex(start, start);
+				flex-direction: column;
+				gap: 16px;
 				width: 100%;
 				.tickets__filter-cbx-item {
 					width: 100%;
+					@include flex(center, space-between);
 					padding: 0 10px;
+					.tickets__filter-btn-stops {
+						@include font(Roboto, 500, 12px, start);
+						opacity: 1;
+						&--disable {
+							opacity: 0;
+						}
+					}
 					&:hover {
 						background-color: #f1fcff;
+						.tickets__filter-btn-stops {
+							opacity: 1;
+						}
 					}
 				}
 			}

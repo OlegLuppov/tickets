@@ -49,3 +49,8 @@ export type TPropsForTicketsInfo = {
 	departureDate?: string
 	origin?: string
 }
+
+export type TCheckboxOptions = {
+	id: string
+	checked?: boolean
+}

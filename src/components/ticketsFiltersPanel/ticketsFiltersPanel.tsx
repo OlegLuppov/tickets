@@ -1,10 +1,11 @@
-import { ToggleButton, ToggleButtonGroup } from '@mui/material'
+import { Button, ToggleButton, ToggleButtonGroup } from '@mui/material'
 import Checkbox from '@mui/joy/Checkbox'
 import './ticketsFilterPanel.scss'
 import { useState } from 'react'
 import { useAppDispatch, useAppSelector } from '../../store/hooks'
 import { сapitalizeFirstLetter } from '../../shared/ustils/transferNames/transferNames'
 import { v4 } from 'uuid'
+import { changeFilterQuantityStops } from '../../features/ticketsSlice'
 
 const toggleButtonStyle = {
 	color: '#2396f1',
@@ -36,12 +37,15 @@ function TicketsFiltersPanel() {
 	const dispatch = useAppDispatch()
 
 	function handleChangeCurrency(_e: React.MouseEvent<HTMLElement>, newAlignment: string) {
-		console.log(alignment)
 		setAlignment(newAlignment)
 	}
 
 	function handleChangeCheckboxStops(event: React.ChangeEvent<HTMLInputElement>) {
-		console.log(event.target.checked)
+		dispatch(changeFilterQuantityStops({ id: event.target.id, checked: event.target.checked }))
+	}
+
+	function handleClickBtnStops(event: React.MouseEvent<HTMLButtonElement>) {
+		dispatch(changeFilterQuantityStops({ id: event.currentTarget.dataset.id! }))
 	}
 
 	return (
@@ -83,6 +87,16 @@ function TicketsFiltersPanel() {
 									label={`${!filter.isAll ? сapitalizeFirstLetter(filter.stops) : 'Все'}`}
 									sx={checkboxesStyle}
 								/>
+								{!filter.isAll && (
+									<Button
+										data-id={filter.id}
+										onClick={handleClickBtnStops}
+										className='tickets__filter-btn-stops tickets__filter-btn-stops--disable'
+										sx={{ padding: 0 }}
+									>
+										ТОЛЬКО
+									</Button>
+								)}
 							</li>
 						))}
 					</ul>

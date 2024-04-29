@@ -4,7 +4,7 @@ import 'moment/dist/locale/ru'
 // Convert date 10.10.2018 to 10 окт 2018, пт
 function convertDate(date: string) {
 	if (!date) return
-	let dateFormat: any = []
+	let dateFormat: string[] | Date | string = []
 	const dateToArr = date.split('.')
 	dateFormat.push(dateToArr[1])
 	dateFormat.push(dateToArr[0])

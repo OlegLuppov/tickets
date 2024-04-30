@@ -5,7 +5,7 @@
 
 
 ### SCREENSHOTS
-![Demo](https://i.ibb.co/WtT65CG/demo.gif
+![At desktop resolution](https://github.com/OlegLuppov/tickets/blob/master/public/screenshots/At%20desktop%20resolution.png)
 
 
 ### STACK

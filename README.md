@@ -1,30 +1,29 @@
-# React + TypeScript + Vite
+# TICKETS
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+### [DESCRIPTION LINK](https://www.typescriptlang.org/) (adds additional syntax to JavaScript to support a tighter integration with your
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
+### STACK
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+Front-end:
 
-- Configure the top-level `parserOptions` property like this:
+- [TypeScript](https://www.typescriptlang.org/) (adds additional syntax to JavaScript to support a tighter integration with your editor. Catch errors early in your editor.)
+- [React](https://react.dev/) (react-dom, react-redux)
+- [Redux](https://redux.js.org/) (@reduxjs/toolkit)
+- [Vite](https://vitejs.dev/)
+- [Material UI](https://mui.com/)(ready-made user interface components)
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+Back-end:
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+- [json-server](https://github.com/typicode/json-server)(I used json-server for requests)
+
+
+### QUICK START
+
+1. Clone this repository.
+2. [`npm install`](https://docs.npmjs.com/cli/install)
+3. cd project dir
+4. Run app `npm run dev` in command line
+5. port 5173 (will open on its own)
+6. json-server port 5174 (will open on its own)

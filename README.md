@@ -5,7 +5,16 @@
 
 
 ### SCREENSHOTS
+- At desktop resolution
 ![At desktop resolution](https://github.com/OlegLuppov/tickets/blob/master/public/screenshots/At%20desktop%20resolution.png)
+- filtration
+![filtration](https://github.com/OlegLuppov/tickets/blob/master/public/screenshots/filtration.png)
+- With a resolution of 800px and less
+![With a resolution of 800px and less](https://github.com/OlegLuppov/tickets/blob/master/public/screenshots/with%20a%20resolution%20of%20800px%20and%20less.png)
+- Sidebar at a resolution of 800px or less
+![Sidebar at a resolution of 800px or less](https://github.com/OlegLuppov/tickets/blob/master/public/screenshots/Sidebar%20at%20a%20resolution%20of%20800px%20or%20less.png)
+- loader check when receiving data
+![loader check when receiving data](https://github.com/OlegLuppov/tickets/blob/master/public/screenshots/loader%20check%20when%20receiving%20data.png)
 
 
 ### STACK

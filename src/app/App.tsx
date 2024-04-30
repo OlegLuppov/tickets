@@ -34,7 +34,7 @@ function App() {
 	const isLoading = useAppSelector((state) => state.tickets.isLoading)
 
 	return (
-		<>
+		<div className='container'>
 			<header className='header'>
 				<i className='header__logo'></i>
 				<nav className='header__nav'>
@@ -43,6 +43,9 @@ function App() {
 					</Button>
 				</nav>
 			</header>
+			<div className={cl('bg-loader', { 'bg-loader--active': isLoading })}>
+				<CircularProgress />
+			</div>
 			<section className='tickets'>
 				<div className='tickets__filter-panel-wrp'>
 					<TicketsFiltersPanel />
@@ -50,12 +53,9 @@ function App() {
 				<Drawer open={openDrawer} onClose={toggleDrawer}>
 					<TicketsFiltersPanel />
 				</Drawer>
-				<div className={cl('bg-loader', { 'bg-loader--active': isLoading })}>
-					<CircularProgress />
-				</div>
 				<TicketsList />
 			</section>
-		</>
+		</div>
 	)
 }
 

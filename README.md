@@ -3,6 +3,11 @@
 
 [DESCRIPTION LINK](https://github.com/OlegLuppov/tickets/blob/master/public/%D0%A2%D0%B5%D1%81%D1%82%D0%BE%D0%B2%D0%BE%D0%B5_%D0%B7%D0%B0%D0%B4%D0%B0%D0%BD%D0%B8%D0%B5_front.pdf)
 
+
+### SCREENSHOTS
+![Demo](https://i.ibb.co/WtT65CG/demo.gif
+
+
 ### STACK
 
 Front-end:
@@ -12,6 +17,7 @@ Front-end:
 - [Redux](https://redux.js.org/) (@reduxjs/toolkit)
 - [Vite](https://vitejs.dev/)
 - [Material UI](https://mui.com/)(ready-made user interface components)
+- [Moment.js](https://momentjs.com/)(working with date and time)
 
 Back-end:
 
